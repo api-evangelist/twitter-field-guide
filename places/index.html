@@ -12,26 +12,14 @@
 <body id="page-node" class="not-front not-logged-in node-type-platform-object showing-tabs">
 
    <div id="page">
-      
+
       <a href="#content-main" class="skip">Skip to Main Content Area</a>
-      
+
       <div id="header-outer">
          <div id="header">
-            <a href="#" id="logo" title="Home">
-            <span class="twitter-bird"></span>Developers</a>
+            <a href="../" id="logo" title="Home">
+            <span class="twitter-bird"></span>Twitter API Field Guide (Preservation)</a>
             <ul id="title-nav">
-               <li class="expanded first">
-                  <a href="#" title="">API Health</a>
-                  <ul class="menu">
-                     <li class="leaf first"><a href="#" title="">API Status</a></li>
-                     <li class="leaf last"><a href="#" title="">API Issues</a></li>
-                  </ul>
-               </li>
-               <li class="leaf"><a href="#" title="">Blog</a></li>
-               <li class="leaf"><a href="#" title="">Discussions</a></li>
-               <li class="expanded active-trail">
-                  <a href="#" title="">Documentation</a>
-               </li>
                <li class="leaf last"><a href="../about/" title="">About This</a></li>
             </ul>
          </div>
@@ -50,7 +38,7 @@
                   <a title='Resources for API v1' class='version-pill version_one' href='/web/20131017203203/https://dev.twitter.com/docs/api/1'>API version 1</a><a title='Resources for API v1.1' class='version-pill version_one_one' href='/web/20131017203203/https://dev.twitter.com/docs/api/1.1'>API version 1.1</a><br/>
                </div>
                <div class="doc-updated">
-                  Updated on Sat, 2012-08-25 13:28  
+                  Updated on Sat, 2012-08-25 13:28
                </div>
                <div>
                   <p>Places are specific, named locations with corresponding geo coordinates. They can be attached to <a href="/web/20131017203203/https://dev.twitter.com/docs/platform-objects/tweets">Tweets</a> by specifying a <tt>place_id</tt> when <a href="/web/20131017203203/https://dev.twitter.com/docs/api/1/post/statuses/update">tweeting</a>. Tweets associated with places are not necessarily issued from that location but could also potentially be <em>about</em> that location. <a href="/web/20131017203203/https://dev.twitter.com/docs/api/1/get/geo/id/%3Aplace_id">Places</a> can be <a href="/web/20131017203203/https://dev.twitter.com/docs/api/1/post/geo/place">created</a> and <a href="/web/20131017203203/https://dev.twitter.com/docs/api/1/get/geo/search">searched for</a>. Tweets can also be <a href="/web/20131017203203/https://dev.twitter.com/docs/finding-tweets-about-places">found</a> by place_id. See <a href="/web/20131017203203/https://dev.twitter.com/docs/about-geo-place-attributes">About Geo Place Attributes</a> for more information.</p>
@@ -93,7 +81,7 @@
                            <td><a href="#obj-boundingbox">Object</a></td>
                            <td>
                               A bounding box of coordinates which encloses this place.
-                              <p>Example:<br/> 
+                              <p>Example:<br/>
                               <div class="geshifilter">
                                  <div class="javascript geshifilter-javascript">
                                     <pre class="de1"><span class="st0">"bounding_box"</span><span class="sy0">:</span><span class="br0">{</span><span class="st0">"coordinates"</span><span class="sy0">:</span><span class="br0">[</span> <span class="br0">[</span> <span class="br0">[</span><span class="nu0">2.2241006</span><span class="sy0">,</span><span class="nu0">48.8155414</span><span class="br0">]</span><span class="sy0">,</span> <span class="br0">[</span><span class="nu0">2.4699099</span><span class="sy0">,</span><span class="nu0">48.8155414</span><span class="br0">]</span><span class="sy0">,</span> <span class="br0">[</span><span class="nu0">2.4699099</span><span class="sy0">,</span><span class="nu0">48.9021461</span><span class="br0">]</span><span class="sy0">,</span> <span class="br0">[</span><span class="nu0">2.2241006</span><span class="sy0">,</span><span class="nu0">48.9021461</span><span class="br0">]</span> <span class="br0">]</span> <span class="br0">]</span><span class="sy0">,</span> <span class="st0">"type"</span><span class="sy0">:</span><span class="st0">"Polygon"</span><span class="br0">}</span></pre>
@@ -189,7 +177,7 @@
                            <td>String</td>
                            <td>
                               The type of location represented by this place.
-                              <p>Example:<br/> 
+                              <p>Example:<br/>
                               <div class="geshifilter">
                                  <div class="javascript geshifilter-javascript">
                                     <pre class="de1"><span class="st0">"place_type"</span><span class="sy0">:</span><span class="st0">"city"</span></pre>
@@ -205,7 +193,7 @@
                            <td>String</td>
                            <td>
                               URL representing the location of additional place metadata for this place.
-                              <p>Example:<br/> 
+                              <p>Example:<br/>
                               <div class="geshifilter">
                                  <div class="javascript geshifilter-javascript">
                                     <pre class="de1"><span class="st0">"url"</span><span class="sy0">:</span><span class="st0">"http://api.twitter.com/1/geo/id/7238f93a3e899af6.json"</span></pre>
@@ -240,7 +228,7 @@
                            <td>Array of Array of Array of Float</td>
                            <td>
                               A series of longitude and latitude points, defining a box which will contain the Place entity this bounding box is related to. Each point is an array in the form of [longitude, latitude].  Points are grouped into an array per bounding box.  Bounding box arrays are wrapped in one additional array to be compatible with the polygon notation.
-                              <p>Example:<br/> 
+                              <p>Example:<br/>
                               <div class="geshifilter">
                                  <div class="javascript geshifilter-javascript">
                                     <pre class="de1"><span class="st0">"coordinates"</span><span class="sy0">:</span><span class="br0">[</span> <span class="br0">[</span> <span class="br0">[</span><span class="nu0">2.2241006</span><span class="sy0">,</span><span class="nu0">48.8155414</span><span class="br0">]</span><span class="sy0">,</span> <span class="br0">[</span><span class="nu0">2.4699099</span><span class="sy0">,</span><span class="nu0">48.8155414</span><span class="br0">]</span><span class="sy0">,</span> <span class="br0">[</span><span class="nu0">2.4699099</span><span class="sy0">,</span><span class="nu0">48.9021461</span><span class="br0">]</span><span class="sy0">,</span> <span class="br0">[</span><span class="nu0">2.2241006</span><span class="sy0">,</span><span class="nu0">48.9021461</span><span class="br0">]</span> <span class="br0">]</span> <span class="br0">]</span></pre>
@@ -256,7 +244,7 @@
                            <td>String</td>
                            <td>
                               The type of data encoded in the coordinates property. This will be "Polygon" for bounding boxes.
-                              <p>Example:<br/> 
+                              <p>Example:<br/>
                               <div class="geshifilter">
                                  <div class="javascript geshifilter-javascript">
                                     <pre class="de1"><span class="st0">"type"</span><span class="sy0">:</span><span class="st0">"Polygon"</span></pre>
@@ -312,7 +300,7 @@
             </div>
          </div>
       </div>
-      
+
       <div id="footer-outer">
          <div id="footer">
             <a href="#" data-show-count="false" class="twitter-follow-button" data-text-color="999999" data-link-color="0080A6" lang="en">Follow @twitterapi</a>
