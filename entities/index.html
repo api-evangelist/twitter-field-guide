@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <title>A field guide to Twitter Platform objects | Twitter Developers</title>
+   <link rel="shortcut icon" href="/web/20131017194923im_/https://dev.twitter.com/sites/all/themes/twitter_commons/favicon.ico" type="image/x-icon" />
+   <meta name="keywords" content="field guide" />
+   <meta name="description" content="Like any ecosystem, the Twitter platform has a variety of flora and fauna. Use this field guide to better understand the most frequently observed wild objects." />
+   <link type="text/css" rel="stylesheet" href="../styles.css"/>
+</head>
+
+<body id="page-node" class="not-front not-logged-in node-type-platform-object showing-tabs">
+
+   <div id="page">
+      
+      <a href="#content-main" class="skip">Skip to Main Content Area</a>
+      
+      <div id="header-outer">
+         <div id="header">
+            <a href="#" id="logo" title="Home">
+            <span class="twitter-bird"></span>Developers</a>
+            <ul id="title-nav">
+               <li class="expanded first">
+                  <a href="#" title="">API Health</a>
+                  <ul class="menu">
+                     <li class="leaf first"><a href="#" title="">API Status</a></li>
+                     <li class="leaf last"><a href="#" title="">API Issues</a></li>
+                  </ul>
+               </li>
+               <li class="leaf"><a href="#" title="">Blog</a></li>
+               <li class="leaf"><a href="#" title="">Discussions</a></li>
+               <li class="expanded active-trail">
+                  <a href="#" title="">Documentation</a>
+               </li>
+               <li class="leaf last"><a href="../about/" title="">About This</a></li>
+            </ul>
+         </div>
+      </div>
+       <div id="content-outer">
+         <div id="breadcrumbs">
+            <div class="breadcrumb">
+               <a href="../">Home</a> → <a href="../">Documentation</a> → <a href="#">Platform Objects</a>
+               <div><a href="#" data-count="none" data-related="twitterapi" class="twitter-share-button" lang="en">Tweet</a><span class="addt-info"></span></div>
+            </div>
+         </div>
+         <h1 id="title">Entities</h1>
+         <div id="content-inner">
+            <div id="content-main">
+               <div class="doc-version">
+                  <a title='Resources for API v1' class='version-pill version_one' href='/web/20131017203130/https://dev.twitter.com/docs/api/1'>API version 1</a><a title='Resources for API v1.1' class='version-pill version_one_one' href='/web/20131017203130/https://dev.twitter.com/docs/api/1.1'>API version 1.1</a><br/>
+               </div>
+               <div class="doc-updated">
+                  Updated on Mon, 2012-10-08 10:54  
+               </div>
+               <div>
+                  <p>Entities provide metadata and additional contextual information about content posted on Twitter. Entities are never divorced from the content they describe. In API v1.1, entities will be returned wherever <a href="/web/20131017203130/https://dev.twitter.com/docs/platform-objects/tweets">Tweets</a> are found in the API. Entities are instrumental in <a href="/web/20131017203130/https://dev.twitter.com/docs/tco-url-wrapper">resolving URLs</a>.</p>
+                  <h3>Field Guide</h3>
+                  <p>Consumers of Entities should tolerate the addition of new fields and variance in ordering of fields with ease. Not all fields appear in all contexts. It is generally safe to consider a nulled field, an empty set, and the absence of a field as the same thing.</p>
+                  <table class="platform-object">
+                     <thead>
+                        <tr>
+                           <th width="100px">
+                              Field
+                           </th>
+                           <th>
+                              Type
+                           </th>
+                           <th>
+                              Description
+                           </th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <th>
+                              hashtags
+                           </th>
+                           <td>Array of <a href="#obj-hashtags">Object</a></td>
+                           <td>
+                              Represents hashtags which have been parsed out of the Tweet text.
+                              <p>Example: <br/>
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1"><span class="st0">"hashtags"</span><span class="sy0">:</span><span class="br0">[</span><span class="br0">{</span><span class="st0">"indices"</span><span class="sy0">:</span><span class="br0">[</span><span class="nu0">32</span><span class="sy0">,</span><span class="nu0">36</span><span class="br0">]</span><span class="sy0">,</span><span class="st0">"text"</span><span class="sy0">:</span><span class="st0">"lol"</span><span class="br0">}</span><span class="br0">]</span></pre>
+                                 </div>
+                              </div>
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th>
+                              media
+                           </th>
+                           <td>Array of <a href="#obj-media">Object</a></td>
+                           <td>
+                              Represents media elements uploaded with the Tweet.
+                              <p>Example:<br/>
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1"><span class="st0">"media"</span><span class="sy0">:</span><span class="br0">[</span><span class="br0">{</span><span class="st0">"type"</span><span class="sy0">:</span><span class="st0">"photo"</span><span class="sy0">,</span> <span class="st0">"sizes"</span><span class="sy0">:</span><span class="br0">{</span><span class="st0">"thumb"</span><span class="sy0">:</span><span class="br0">{</span><span class="st0">"h"</span><span class="sy0">:</span><span class="nu0">150</span><span class="sy0">,</span> <span class="st0">"resize"</span><span class="sy0">:</span><span class="st0">"crop"</span><span class="sy0">,</span> <span class="st0">"w"</span><span class="sy0">:</span><span class="nu0">150</span><span class="br0">}</span><span class="sy0">,</span> <span class="st0">"large"</span><span class="sy0">:</span><span class="br0">{</span><span class="st0">"h"</span><span class="sy0">:</span><span class="nu0">238</span><span class="sy0">,</span> <span class="st0">"resize"</span><span class="sy0">:</span><span class="st0">"fit"</span><span class="sy0">,</span> <span class="st0">"w"</span><span class="sy0">:</span><span class="nu0">226</span><span class="br0">}</span><span class="sy0">,</span> <span class="st0">"medium"</span><span class="sy0">:</span><span class="br0">{</span><span class="st0">"h"</span><span class="sy0">:</span><span class="nu0">238</span><span class="sy0">,</span> <span class="st0">"resize"</span><span class="sy0">:</span><span class="st0">"fit"</span><span class="sy0">,</span> <span class="st0">"w"</span><span class="sy0">:</span><span class="nu0">226</span><span class="br0">}</span><span class="sy0">,</span> <span class="st0">"small"</span><span class="sy0">:</span><span class="br0">{</span><span class="st0">"h"</span><span class="sy0">:</span><span class="nu0">238</span><span class="sy0">,</span> <span class="st0">"resize"</span><span class="sy0">:</span><span class="st0">"fit"</span><span class="sy0">,</span> <span class="st0">"w"</span><span class="sy0">:</span><span class="nu0">226</span><span class="br0">}</span><span class="br0">}</span><span class="sy0">,</span> <span class="st0">"indices"</span><span class="sy0">:</span><span class="br0">[</span><span class="nu0">15</span><span class="sy0">,</span><span class="nu0">35</span><span class="br0">]</span><span class="sy0">,</span> <span class="st0">"url"</span><span class="sy0">:</span><span class="st0">"http:<span class="es0">\/</span><span class="es0">\/</span>t.co<span class="es0">\/</span>rJC5Pxsu"</span><span class="sy0">,</span> <span class="st0">"media_url"</span><span class="sy0">:</span><span class="st0">"http:<span class="es0">\/</span><span class="es0">\/</span>p.twimg.com<span class="es0">\/</span>AZVLmp-CIAAbkyy.jpg"</span><span class="sy0">,</span> <span class="st0">"display_url"</span><span class="sy0">:</span><span class="st0">"pic.twitter.com<span class="es0">\/</span>rJC5Pxsu"</span><span class="sy0">,</span> <span class="st0">"id"</span><span class="sy0">:</span><span class="nu0">114080493040967680</span><span class="sy0">,</span> <span class="st0">"id_str"</span><span class="sy0">:</span><span class="st0">"114080493040967680"</span><span class="sy0">,</span> <span class="st0">"expanded_url"</span><span class="sy0">:</span> <span class="st0">"http:<span class="es0">\/</span><span class="es0">\/</span>twitter.com<span class="es0">\/</span>yunorno<span class="es0">\/</span>status<span class="es0">\/</span>114080493036773378<span class="es0">\/</span>photo<span class="es0">\/</span>1"</span><span class="sy0">,</span> <span class="st0">"media_url_https"</span><span class="sy0">:</span><span class="st0">"https:<span class="es0">\/</span><span class="es0">\/</span>p.twimg.com<span class="es0">\/</span>AZVLmp-CIAAbkyy.jpg"</span><span class="br0">}</span><span class="br0">]</span></pre>
+                                 </div>
+                              </div>
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th>
+                              urls
+                           </th>
+                           <td>Array of <a href="#obj-url">Object</a></td>
+                           <td>
+                              Represents URLs included in the text of a Tweet or within textual fields of a <a href="/web/20131017203130/https://dev.twitter.com/docs/platform-objects/users">user object</a>.
+                              <p>Tweet Example:<br/>
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1"><span class="st0">"urls"</span><span class="sy0">:</span><span class="br0">[</span><span class="br0">{</span><span class="st0">"indices"</span><span class="sy0">:</span><span class="br0">[</span><span class="nu0">32</span><span class="sy0">,</span><span class="nu0">52</span><span class="br0">]</span><span class="sy0">,</span> <span class="st0">"url"</span><span class="sy0">:</span><span class="st0">"http:<span class="es0">\/</span><span class="es0">\/</span>t.co<span class="es0">\/</span>IOwBrTZR"</span><span class="sy0">,</span> <span class="st0">"display_url"</span><span class="sy0">:</span><span class="st0">"youtube.com<span class="es0">\/</span>watch?v=oHg5SJ<span class="es0">\u</span>2026"</span><span class="sy0">,</span> <span class="st0">"expanded_url"</span><span class="sy0">:</span><span class="st0">"http:<span class="es0">\/</span><span class="es0">\/</span>www.youtube.com<span class="es0">\/</span>watch?v=oHg5SJYRHA0"</span><span class="br0">}</span><span class="br0">]</span></pre>
+                                 </div>
+                              </div>
+                              </p>
+                              <p>User Example:<br/>
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1">          <span class="st0">"urls"</span><span class="sy0">:</span><span class="br0">[</span><span class="br0">{</span><span class="st0">"indices"</span><span class="sy0">:</span><span class="br0">[</span><span class="nu0">32</span><span class="sy0">,</span><span class="nu0">52</span><span class="br0">]</span><span class="sy0">,</span> <span class="st0">"url"</span><span class="sy0">:</span><span class="st0">"http:<span class="es0">\/</span><span class="es0">\/</span>t.co<span class="es0">\/</span>IOwBrTZR"</span><span class="sy0">,</span> <span class="st0">"display_url"</span><span class="sy0">:</span><span class="st0">"youtube.com<span class="es0">\/</span>watch?v=oHg5SJ<span class="es0">\u</span>2026"</span><span class="sy0">,</span> <span class="st0">"expanded_url"</span><span class="sy0">:</span><span class="st0">"http:<span class="es0">\/</span><span class="es0">\/</span>www.youtube.com<span class="es0">\/</span>watch?v=oHg5SJYRHA0"</span><span class="br0">}</span><span class="br0">]</span>
+ </pre>
+                                 </div>
+                              </div>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th>
+                              user_mentions
+                           </th>
+                           <td>Array of <a href="#obj-usermention">Object</a></td>
+                           <td>
+                              Represents other Twitter users mentioned in the text of the Tweet.
+                              <p>Example:<br/>
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1"><span class="st0">"user_mentions"</span><span class="sy0">:</span><span class="br0">[</span><span class="br0">{</span><span class="st0">"name"</span><span class="sy0">:</span><span class="st0">"Twitter API"</span><span class="sy0">,</span> <span class="st0">"indices"</span><span class="sy0">:</span><span class="br0">[</span><span class="nu0">4</span><span class="sy0">,</span><span class="nu0">15</span><span class="br0">]</span><span class="sy0">,</span> <span class="st0">"screen_name"</span><span class="sy0">:</span><span class="st0">"twitterapi"</span><span class="sy0">,</span> <span class="st0">"id"</span><span class="sy0">:</span><span class="nu0">6253282</span><span class="sy0">,</span> <span class="st0">"id_str"</span><span class="sy0">:</span><span class="st0">"6253282"</span><span class="br0">}</span><span class="br0">]</span></pre>
+                                 </div>
+                              </div>
+                              </p>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  <h3 id="obj-hashtags">Hashtags</h3>
+                  <table class="platform-object">
+                     <thead>
+                        <tr>
+                           <th width="100px">
+                              Field
+                           </th>
+                           <th>
+                              Type
+                           </th>
+                           <th>
+                              Description
+                           </th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <th>
+                              indices
+                           </th>
+                           <td>Array of Int</td>
+                           <td>
+                              An array of integers indicating the offsets within the Tweet text where the hashtag begins and ends.  The first integer represents the location of the # character in the Tweet text string.  The second integer represents the location of the first character after the hashtag.  Therefore the difference between the two numbers will be the length of the hashtag name plus one (for the '#' character).
+                              <p>Example:<br/>
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1"><span class="st0">"indices"</span><span class="sy0">:</span><span class="br0">[</span><span class="nu0">32</span><span class="sy0">,</span><span class="nu0">36</span><span class="br0">]</span></pre>
+                                 </div>
+                              </div>
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th>
+                              text
+                           </th>
+                           <td>String</td>
+                           <td>
+                              Name of the hashtag, minus the leading '#' character.
+                              <p>Example:<br/>
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1"><span class="st0">"text"</span><span class="sy0">:</span><span class="st0">"lol"</span></pre>
+                                 </div>
+                              </div>
+                              </p>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  <h3 id="obj-media">Media</h3>
+                  <table class="platform-object">
+                     <thead>
+                        <tr>
+                           <th width="100px">
+                              Field
+                           </th>
+                           <th>
+                              Type
+                           </th>
+                           <th>
+                              Description
+                           </th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <th>
+                              display_url
+                           </th>
+                           <td>String</td>
+                           <td>
+                              URL of the media to display to clients.
+                              <p>Example:<br/>
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1"><span class="st0">"display_url"</span><span class="sy0">:</span><span class="st0">"pic.twitter.com<span class="es0">\/</span>rJC5Pxsu"</span></pre>
+                                 </div>
+                              </div>
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th>
+                              expanded_url
+                           </th>
+                           <td>String</td>
+                           <td>
+                              An expanded version of display_url.  Links to the media display page.
+                              <p>Example:<br/>
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1"><span class="st0">"expanded_url"</span><span class="sy0">:</span> <span class="st0">"http:<span class="es0">\/</span><span class="es0">\/</span>twitter.com<span class="es0">\/</span>yunorno<span class="es0">\/</span>status<span class="es0">\/</span>114080493036773378<span class="es0">\/</span>photo<span class="es0">\/</span>1"</span></pre>
+                                 </div>
+                              </div>
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th>
+                              id
+                           </th>
+                           <td>Int64</td>
+                           <td>
+                              ID of the media expressed as a 64-bit integer.
+                              <p>Example:<br/>
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1"><span class="st0">"id"</span><span class="sy0">:</span><span class="nu0">114080493040967680</span></pre>
+                                 </div>
+                              </div>
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th>
+                              id_str
+                           </th>
+                           <td>String</td>
+                           <td>
+                              ID of the media expressed as a string.
+                              <p>Example:<br/>
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1"><span class="st0">"id_str"</span><span class="sy0">:</span><span class="st0">"114080493040967680"</span></pre>
+                                 </div>
+                              </div>
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th>
+                              indices
+                           </th>
+                           <td>Array of Int</td>
+                           <td>
+                              An array of integers indicating the offsets within the Tweet text where the URL begins and ends.  The first integer represents the location of the first character of the URL in the Tweet text.  The second integer represents the location of the first non-URL character occurring after the URL (or the end of the string if the URL is the last part of the Tweet text).
+                              <p>Example:<br/>
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1"><span class="st0">"indices"</span><span class="sy0">:</span><span class="br0">[</span><span class="nu0">15</span><span class="sy0">,</span><span class="nu0">35</span><span class="br0">]</span></pre>
+                                 </div>
+                              </div>
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th>
+                              media_url
+                           </th>
+                           <td>String</td>
+                           <td>
+                              An http:// URL pointing directly to the uploaded media file.
+                              <p>Example:<br/>
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1"><span class="st0">"media_url"</span><span class="sy0">:</span><span class="st0">"http:<span class="es0">\/</span><span class="es0">\/</span>p.twimg.com<span class="es0">\/</span>AZVLmp-CIAAbkyy.jpg"</span></pre>
+                                 </div>
+                              </div>
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th>
+                              media_url_https
+                           </th>
+                           <td>String</td>
+                           <td>
+                              An https:// URL pointing directly to the uploaded media file, for embedding on https pages.
+                              <p>Example:<br/>
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1"><span class="st0">"media_url_https"</span><span class="sy0">:</span><span class="st0">"https:<span class="es0">\/</span><span class="es0">\/</span>p.twimg.com<span class="es0">\/</span>AZVLmp-CIAAbkyy.jpg"</span></pre>
+                                 </div>
+                              </div>
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th>
+                              sizes
+                           </th>
+                           <td><a href="#obj-sizes">Object</a></td>
+                           <td>
+                              An object showing available sizes for the media file.
+                              <p>Example:<br/>
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1"><span class="st0">"sizes"</span><span class="sy0">:</span><span class="br0">{</span><span class="st0">"thumb"</span><span class="sy0">:</span><span class="br0">{</span><span class="st0">"h"</span><span class="sy0">:</span><span class="nu0">150</span><span class="sy0">,</span> <span class="st0">"resize"</span><span class="sy0">:</span><span class="st0">"crop"</span><span class="sy0">,</span> <span class="st0">"w"</span><span class="sy0">:</span><span class="nu0">150</span><span class="br0">}</span><span class="sy0">,</span> <span class="st0">"large"</span><span class="sy0">:</span><span class="br0">{</span><span class="st0">"h"</span><span class="sy0">:</span><span class="nu0">238</span><span class="sy0">,</span> <span class="st0">"resize"</span><span class="sy0">:</span><span class="st0">"fit"</span><span class="sy0">,</span> <span class="st0">"w"</span><span class="sy0">:</span><span class="nu0">226</span><span class="br0">}</span><span class="sy0">,</span> <span class="st0">"medium"</span><span class="sy0">:</span><span class="br0">{</span><span class="st0">"h"</span><span class="sy0">:</span><span class="nu0">238</span><span class="sy0">,</span> <span class="st0">"resize"</span><span class="sy0">:</span><span class="st0">"fit"</span><span class="sy0">,</span> <span class="st0">"w"</span><span class="sy0">:</span><span class="nu0">226</span><span class="br0">}</span><span class="sy0">,</span> <span class="st0">"small"</span><span class="sy0">:</span><span class="br0">{</span><span class="st0">"h"</span><span class="sy0">:</span><span class="nu0">238</span><span class="sy0">,</span> <span class="st0">"resize"</span><span class="sy0">:</span><span class="st0">"fit"</span><span class="sy0">,</span> <span class="st0">"w"</span><span class="sy0">:</span><span class="nu0">226</span><span class="br0">}</span><span class="br0">}</span></pre>
+                                 </div>
+                              </div>
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th>
+                              source_status_id
+                           </th>
+                           <td><a href="#obj-sizes">Int64</a></td>
+                           <td>
+                              For Tweets containing media that was originally associated with a different tweet, this ID points to the original Tweet.
+                              <p>Example:<br/>
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1"><span class="st0">"source_status_id"</span><span class="sy0">:</span> <span class="nu0">205282515685081088</span></pre>
+                                 </div>
+                              </div>
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th>
+                              source_status_id_str
+                           </th>
+                           <td><a href="#obj-sizes">Int64</a></td>
+                           <td>
+                              For Tweets containing media that was originally associated with a different tweet, this string-based ID points to the original Tweet.
+                              <p>Example:<br/>
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1">  <span class="st0">"source_status_id_str"</span><span class="sy0">:</span> <span class="st0">"205282515685081088"</span></pre>
+                                 </div>
+                              </div>
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th>
+                              type
+                           </th>
+                           <td>String</td>
+                           <td>
+                              Type of uploaded media.
+                              <p>Example:<br/>
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1"><span class="st0">"type"</span><span class="sy0">:</span><span class="st0">"photo"</span></pre>
+                                 </div>
+                              </div>
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th>
+                              url
+                           </th>
+                           <td>String</td>
+                           <td>
+                              Wrapped URL for the media link.  This corresponds with the URL embedded directly into the raw Tweet text, and the values for the <tt>indices</tt> parameter.
+                              <p>Example:<br/>
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1"><span class="st0">"url"</span><span class="sy0">:</span><span class="st0">"http:<span class="es0">\/</span><span class="es0">\/</span>t.co<span class="es0">\/</span>rJC5Pxsu"</span></pre>
+                                 </div>
+                              </div>
+                              </p>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  <h3 id="obj-size">Size</h3>
+                  <table class="platform-object">
+                     <thead>
+                        <tr>
+                           <th width="100px">
+                              Field
+                           </th>
+                           <th>
+                              Type
+                           </th>
+                           <th>
+                              Description
+                           </th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <th>
+                              h
+                           </th>
+                           <td>Int</td>
+                           <td>
+                              Height in pixels of this size.
+                              <p>Example:<br/>
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1"><span class="st0">"h"</span><span class="sy0">:</span><span class="nu0">150</span></pre>
+                                 </div>
+                              </div>
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th>
+                              resize
+                           </th>
+                           <td>String</td>
+                           <td>
+                              Resizing method used to obtain this size.  A value of <tt>fit</tt> means that the media was resized to fit one dimension, keeping its native aspect ratio.  A value of <tt>crop</tt> means that the media was cropped in order to fit a specific resolution.
+                              <p>Example:<br/>
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1"><span class="st0">"resize"</span><span class="sy0">:</span><span class="st0">"crop"</span></pre>
+                                 </div>
+                              </div>
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th>
+                              w
+                           </th>
+                           <td>Int</td>
+                           <td>
+                              Width in pixels of this size.
+                              <p>Example:<br/>
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1"><span class="st0">"w"</span><span class="sy0">:</span><span class="nu0">150</span></pre>
+                                 </div>
+                              </div>
+                              </p>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  <h3 id="obj-sizes">Sizes</h3>
+                  <table class="platform-object">
+                     <thead>
+                        <tr>
+                           <th width="100px">
+                              Field
+                           </th>
+                           <th>
+                              Type
+                           </th>
+                           <th>
+                              Description
+                           </th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <th>
+                              thumb
+                           </th>
+                           <td><a href="#obj-size">Object</a></td>
+                           <td>
+                              Information for a thumbnail-sized version of the media.
+                              <p>Example:<br/>
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1"><span class="st0">"thumb"</span><span class="sy0">:</span><span class="br0">{</span><span class="st0">"h"</span><span class="sy0">:</span><span class="nu0">150</span><span class="sy0">,</span> <span class="st0">"resize"</span><span class="sy0">:</span><span class="st0">"crop"</span><span class="sy0">,</span> <span class="st0">"w"</span><span class="sy0">:</span><span class="nu0">150</span><span class="br0">}</span></pre>
+                                 </div>
+                              </div>
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th>
+                              large
+                           </th>
+                           <td><a href="#obj-size">Object</a></td>
+                           <td>
+                              Information for a large-sized version of the media.
+                              <p>Example:<br/>
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1"><span class="st0">"large"</span><span class="sy0">:</span><span class="br0">{</span><span class="st0">"h"</span><span class="sy0">:</span><span class="nu0">238</span><span class="sy0">,</span> <span class="st0">"resize"</span><span class="sy0">:</span><span class="st0">"fit"</span><span class="sy0">,</span> <span class="st0">"w"</span><span class="sy0">:</span><span class="nu0">226</span><span class="br0">}</span></pre>
+                                 </div>
+                              </div>
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th>
+                              medium
+                           </th>
+                           <td><a href="#obj-size">Object</a></td>
+                           <td>
+                              Information for a medium-sized version of the media.
+                              <p>Example:<br/>
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1"><span class="st0">"medium"</span><span class="sy0">:</span><span class="br0">{</span><span class="st0">"h"</span><span class="sy0">:</span><span class="nu0">238</span><span class="sy0">,</span> <span class="st0">"resize"</span><span class="sy0">:</span><span class="st0">"fit"</span><span class="sy0">,</span> <span class="st0">"w"</span><span class="sy0">:</span><span class="nu0">226</span><span class="br0">}</span></pre>
+                                 </div>
+                              </div>
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th>
+                              small
+                           </th>
+                           <td><a href="#obj-size">Object</a></td>
+                           <td>
+                              Information for a small-sized version of the media.
+                              <p>Example:<br/>
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1"><span class="st0">"small"</span><span class="sy0">:</span><span class="br0">{</span><span class="st0">"h"</span><span class="sy0">:</span><span class="nu0">238</span><span class="sy0">,</span> <span class="st0">"resize"</span><span class="sy0">:</span><span class="st0">"fit"</span><span class="sy0">,</span> <span class="st0">"w"</span><span class="sy0">:</span><span class="nu0">226</span><span class="br0">}</span></pre>
+                                 </div>
+                              </div>
+                              </p>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  <h3 id="obj-url">URL</h3>
+                  <table class="platform-object">
+                     <thead>
+                        <tr>
+                           <th width="100px">
+                              Field
+                           </th>
+                           <th>
+                              Type
+                           </th>
+                           <th>
+                              Description
+                           </th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <th>
+                              display_url
+                           </th>
+                           <td>String</td>
+                           <td>
+                              Version of the URL to display to clients.
+                              <p>Example:<br/>
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1"><span class="st0">"display_url"</span><span class="sy0">:</span><span class="st0">"youtube.com<span class="es0">\/</span>watch?v=oHg5SJ<span class="es0">\u</span>2026"</span></pre>
+                                 </div>
+                              </div>
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th>
+                              expanded_url
+                           </th>
+                           <td>String</td>
+                           <td>
+                              Expanded version of <tt>display_url</tt>.
+                              <p>Example:<br/>
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1"><span class="st0">"expanded_url"</span><span class="sy0">:</span><span class="st0">"http:<span class="es0">\/</span><span class="es0">\/</span>www.youtube.com<span class="es0">\/</span>watch?v=oHg5SJYRHA0"</span></pre>
+                                 </div>
+                              </div>
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th>
+                              indices
+                           </th>
+                           <td>Array of Int</td>
+                           <td>
+                              An array of integers representing offsets within the Tweet text where the URL begins and ends.  The first integer represents the location of the first character of the URL in the Tweet text.  The second integer represents the location of the first non-URL character after the end of the URL.
+                              <p>Example:<br/>
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1"><span class="st0">"indices"</span><span class="sy0">:</span><span class="br0">[</span><span class="nu0">32</span><span class="sy0">,</span><span class="nu0">52</span><span class="br0">]</span></pre>
+                                 </div>
+                              </div>
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th>
+                              url
+                           </th>
+                           <td>String</td>
+                           <td>
+                              Wrapped URL, corresponding to the value embedded directly into the raw Tweet text, and the values for the
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1">indices</pre>
+                                 </div>
+                              </div>
+                              parameter.
+                              <p>Example:<br/>
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1"><span class="st0">"url"</span><span class="sy0">:</span><span class="st0">"http:<span class="es0">\/</span><span class="es0">\/</span>t.co<span class="es0">\/</span>IOwBrTZR"</span></pre>
+                                 </div>
+                              </div>
+                              </p>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  <h3 id="obj-usermention">User Mention</h3>
+                  <table class="platform-object">
+                     <thead>
+                        <tr>
+                           <th width="100px">
+                              Field
+                           </th>
+                           <th>
+                              Type
+                           </th>
+                           <th>
+                              Description
+                           </th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <th>
+                              id
+                           </th>
+                           <td>Int64</td>
+                           <td>
+                              ID of the mentioned user, as an integer.
+                              <p>Example:<br/>
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1"><span class="st0">"id"</span><span class="sy0">:</span><span class="nu0">6253282</span></pre>
+                                 </div>
+                              </div>
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th>
+                              id_str
+                           </th>
+                           <td>String</td>
+                           <td>
+                              If of the mentioned user, as a string.
+                              <p>Example:<br/>
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1"><span class="st0">"id_str"</span><span class="sy0">:</span><span class="st0">"6253282"</span></pre>
+                                 </div>
+                              </div>
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th>
+                              indices
+                           </th>
+                           <td>Array of Int</td>
+                           <td>
+                              An array of integers representing the offsets within the Tweet text where the user reference begins and ends.  The first integer represents the location of the '@' character of the user mention.  The second integer represents the location of the first non-screenname character following the user mention.
+                              <p>Example:<br/>
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1"><span class="st0">"indices"</span><span class="sy0">:</span><span class="br0">[</span><span class="nu0">4</span><span class="sy0">,</span><span class="nu0">15</span><span class="br0">]</span></pre>
+                                 </div>
+                              </div>
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th>
+                              name
+                           </th>
+                           <td>String</td>
+                           <td>
+                              Display name of the referenced user.
+                              <p>Example:<br/>
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1"><span class="st0">"name"</span><span class="sy0">:</span><span class="st0">"Twitter API"</span></pre>
+                                 </div>
+                              </div>
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th>
+                              screen_name
+                           </th>
+                           <td>String</td>
+                           <td>
+                              Screen name of the referenced user.
+                              <p>Example:<br/>
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1"><span class="st0">"screen_name"</span><span class="sy0">:</span><span class="st0">"twitterapi"</span></pre>
+                                 </div>
+                              </div>
+                              </p>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  <a name="user_entities"></a>
+                  <h3>Entities for User Objects</h3>
+                  <p>Entities for User Objects describe URLs that appear in the user-defined profile URL and description fields. They do not describe hashtags or user_mentions. Unlike Tweet entities, user entities can apply to multiple fields within its parent object — to disambiguate, you'll find a parent nodes called "url" and "description" that indicate which field contains the entitized URL.</p>
+                  <p>In this example, the user's "url" field contains a t.co link that is fully expanded within the <tt>entities/url/urls[0]</tt> node of the response. The user does not have a wrapped URL in their description.
+                  <div class="geshifilter">
+                     <div class="java geshifilter-java">
+                        <pre class="de1"><span class="st0">"entities"</span><span class="sy0">:</span> <span class="br0">{</span>
+  <span class="st0">"url"</span><span class="sy0">:</span> <span class="br0">{</span>
+    <span class="st0">"urls"</span><span class="sy0">:</span> <span class="br0">[</span>
+      <span class="br0">{</span>
+        <span class="st0">"expanded_url"</span><span class="sy0">:</span> <span class="kw2">null</span>,
+        <span class="st0">"url"</span><span class="sy0">:</span> <span class="st0">"http://dev.twitter.com"</span>,
+        <span class="st0">"indices"</span><span class="sy0">:</span> <span class="br0">[</span>
+          <span class="nu0">0</span>,
+          <span class="nu0">22</span>
+        <span class="br0">]</span>
+      <span class="br0">}</span>
+    <span class="br0">]</span>
+  <span class="br0">}</span>,
+  <span class="st0">"description"</span><span class="sy0">:</span> <span class="br0">{</span>
+    <span class="st0">"urls"</span><span class="sy0">:</span> <span class="br0">[</span>
+ 
+    <span class="br0">]</span>
+  <span class="br0">}</span>
+<span class="br0">}</span></pre>
+                     </div>
+                  </div>
+                  </p>
+                  <div class="section">
+                     <a name="retweet_entities"></a>
+                     <h3>Entities for Retweets</h3>
+                     <p>Entities in retweeted objects may be different from the original Tweet, particularly in the case where the original Tweet text was shortened for the retweet version.  For example, consider this Tweet:
+                     <div class="geshifilter">
+                        <div class="java geshifilter-java">
+                           <pre class="de1"><span class="br0">{</span>
+  ...
+  <span class="st0">"text"</span><span class="sy0">:</span> <span class="st0">"RT @twitterapi: This is a relatively long Tweet which will get  retweeted by other users.  The hashtag at the end will be cut off #FooBa ..."</span>,
+  ...
+  <span class="st0">"retweeted_status"</span><span class="sy0">:</span> <span class="br0">{</span>
+    ...
+    <span class="st0">"text"</span><span class="sy0">:</span> <span class="st0">"This is a relatively long Tweet which will get  retweeted by other users.  The hashtag at the end will be cut off #FooBarBaz"</span>,
+    ...
+  <span class="br0">}</span>,
+  ...
+<span class="br0">}</span></pre>
+                        </div>
+                     </div>
+                     </p>
+                     <p>The corresponding entities differ, including a truncated hashtag entry for the toplevel entities object.  For this reason, you should reference <tt>retweeted_status</tt> for Tweet information whenever it exists:
+                     <div class="geshifilter">
+                        <div class="java geshifilter-java">
+                           <pre class="de1"><span class="br0">{</span>
+  ...
+  <span class="st0">"entities"</span><span class="sy0">:</span> <span class="br0">{</span>
+    <span class="st0">"hashtags"</span><span class="sy0">:</span> <span class="br0">[</span>
+      <span class="br0">{</span>
+        <span class="st0">"text"</span><span class="sy0">:</span> <span class="st0">"FooBarBaz"</span>,
+        <span class="st0">"indices"</span><span class="sy0">:</span> <span class="br0">[</span>
+          <span class="nu0">113</span>,
+          <span class="nu0">123</span>
+        <span class="br0">]</span>
+      <span class="br0">}</span>
+    <span class="br0">]</span>,
+    <span class="st0">"urls"</span><span class="sy0">:</span> <span class="br0">[</span><span class="br0">]</span>,
+    <span class="st0">"user_mentions"</span><span class="sy0">:</span> <span class="br0">[</span><span class="br0">]</span>
+  <span class="br0">}</span>,
+  ...
+  <span class="st0">"retweeted_status"</span><span class="sy0">:</span> <span class="br0">{</span>
+    ...
+    <span class="st0">"entities"</span><span class="sy0">:</span> <span class="br0">{</span>
+      <span class="st0">"hashtags"</span><span class="sy0">:</span> <span class="br0">[</span>
+        <span class="br0">{</span>
+          <span class="st0">"text"</span><span class="sy0">:</span> <span class="st0">"FooBa"</span>,
+          <span class="st0">"indices"</span><span class="sy0">:</span> <span class="br0">[</span>
+            <span class="nu0">125</span>,
+            <span class="nu0">131</span>
+          <span class="br0">]</span>
+        <span class="br0">}</span>
+      <span class="br0">]</span>,
+      <span class="st0">"urls"</span><span class="sy0">:</span> <span class="br0">[</span><span class="br0">]</span>,
+      <span class="st0">"user_mentions"</span><span class="sy0">:</span> <span class="br0">[</span>
+        <span class="br0">{</span>
+          <span class="st0">"screen_name"</span><span class="sy0">:</span> <span class="st0">"TwitterAPI"</span>,
+          <span class="st0">"name"</span><span class="sy0">:</span> <span class="st0">"Twitter API"</span>,
+          <span class="st0">"id"</span><span class="sy0">:</span> <span class="nu0">6253282</span>,
+          <span class="st0">"id_str"</span><span class="sy0">:</span> <span class="st0">"6253282"</span>,
+          <span class="st0">"indices"</span><span class="sy0">:</span> <span class="br0">[</span>
+            <span class="nu0">3</span>,
+            <span class="nu0">14</span>
+          <span class="br0">]</span>
+        <span class="br0">}</span>
+      <span class="br0">]</span>
+    <span class="br0">}</span>,
+    ...
+  <span class="br0">}</span>,
+  ...
+<span class="br0">}</span></pre>
+                        </div>
+                     </div>
+                     </p>
+                  </div>
+               </div>
+            </div>
+            <div id="sidebar-last">
+               <div class="block">
+                  <h2>Natural habitat</h2>
+                  <p>Entities are most often found within <a href="/web/20131017203130/https://dev.twitter.com/docs/platform-objects/tweets">Tweets</a>.</p>
+                  <p><img src="../images/yellow_flycatcher.jpg" width="235" height="277" alt="" title="" /></p>
+               </div>
+               <div class="block">
+                  <h2>Tags</h2>
+                  <div class="view">
+                     <div class="content">
+                        <div class="item-list">
+                           <ul>
+                              <li class="views-row views-row-1 views-row-odd views-row-first">  <a href="/web/20131017203130/https://dev.twitter.com/tags/tweets">Tweets</a>  (27)</li>
+                              <li class="views-row views-row-2 views-row-even">  <a href="/web/20131017203130/https://dev.twitter.com/tags/entities">Entities</a>  (34)</li>
+                              <li class="views-row views-row-3 views-row-odd">  <a href="/web/20131017203130/https://dev.twitter.com/tags/mentions">Mentions</a>  (20)</li>
+                              <li class="views-row views-row-4 views-row-even">  <a href="/web/20131017203130/https://dev.twitter.com/tags/tco">t.co</a>  (43)</li>
+                              <li class="views-row views-row-5 views-row-odd">  <a href="/web/20131017203130/https://dev.twitter.com/tags/field-descriptions">field descriptions</a>  (9)</li>
+                              <li class="views-row views-row-6 views-row-even">  <a href="/web/20131017203130/https://dev.twitter.com/tags/hashtags">hashtags</a>  (5)</li>
+                              <li class="views-row views-row-7 views-row-odd">  <a href="/web/20131017203130/https://dev.twitter.com/tags/finding-media">finding media</a>  (4)</li>
+                              <li class="views-row views-row-8 views-row-even views-row-last">  <a href="/web/20131017203130/https://dev.twitter.com/tags/finding-links">finding links</a>  (2)</li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      
+      <div id="footer-outer">
+         <div id="footer">
+            <a href="#" data-show-count="false" class="twitter-follow-button" data-text-color="999999" data-link-color="0080A6" lang="en">Follow @twitterapi</a>
+            <ul class="menu">
+               <li class="leaf first"><a href="#terms/api-terms" title="Developer Rules of the Road">API Terms</a></li>
+               <li class="leaf"><a href="#" title="Twitter API Status">API Status</a></li>
+               <li class="leaf"><a href="#" title="Twitter Developer blog">Blog</a></li>
+               <li class="leaf"><a href="#" title="Twitter Development discussions">Discussions</a></li>
+               <li class="leaf"><a href="#" title="Twitter development documentation">Documentation</a></li>
+            </ul>
+         </div>
+      </div>
+   </div>
+</body>
+</html>

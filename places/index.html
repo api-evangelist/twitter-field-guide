@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <title>A field guide to Twitter Platform objects | Twitter Developers</title>
+   <link rel="shortcut icon" href="/web/20131017194923im_/https://dev.twitter.com/sites/all/themes/twitter_commons/favicon.ico" type="image/x-icon" />
+   <meta name="keywords" content="field guide" />
+   <meta name="description" content="Like any ecosystem, the Twitter platform has a variety of flora and fauna. Use this field guide to better understand the most frequently observed wild objects." />
+   <link type="text/css" rel="stylesheet" href="../styles.css"/>
+</head>
+
+<body id="page-node" class="not-front not-logged-in node-type-platform-object showing-tabs">
+
+   <div id="page">
+      
+      <a href="#content-main" class="skip">Skip to Main Content Area</a>
+      
+      <div id="header-outer">
+         <div id="header">
+            <a href="#" id="logo" title="Home">
+            <span class="twitter-bird"></span>Developers</a>
+            <ul id="title-nav">
+               <li class="expanded first">
+                  <a href="#" title="">API Health</a>
+                  <ul class="menu">
+                     <li class="leaf first"><a href="#" title="">API Status</a></li>
+                     <li class="leaf last"><a href="#" title="">API Issues</a></li>
+                  </ul>
+               </li>
+               <li class="leaf"><a href="#" title="">Blog</a></li>
+               <li class="leaf"><a href="#" title="">Discussions</a></li>
+               <li class="expanded active-trail">
+                  <a href="#" title="">Documentation</a>
+               </li>
+               <li class="leaf last"><a href="../about/" title="">About This</a></li>
+            </ul>
+         </div>
+      </div>
+      <div id="content-outer">
+         <div id="breadcrumbs">
+            <div class="breadcrumb">
+               <a href="../">Home</a> → <a href="../">Documentation</a> → <a href="#">Platform Objects</a>
+               <div><a href="#" data-count="none" data-related="twitterapi" class="twitter-share-button" lang="en">Tweet</a><span class="addt-info"></span></div>
+            </div>
+         </div>
+         <h1 id="title">Places</h1>
+         <div id="content-inner">
+            <div id="content-main">
+               <div class="doc-version">
+                  <a title='Resources for API v1' class='version-pill version_one' href='/web/20131017203203/https://dev.twitter.com/docs/api/1'>API version 1</a><a title='Resources for API v1.1' class='version-pill version_one_one' href='/web/20131017203203/https://dev.twitter.com/docs/api/1.1'>API version 1.1</a><br/>
+               </div>
+               <div class="doc-updated">
+                  Updated on Sat, 2012-08-25 13:28  
+               </div>
+               <div>
+                  <p>Places are specific, named locations with corresponding geo coordinates. They can be attached to <a href="/web/20131017203203/https://dev.twitter.com/docs/platform-objects/tweets">Tweets</a> by specifying a <tt>place_id</tt> when <a href="/web/20131017203203/https://dev.twitter.com/docs/api/1/post/statuses/update">tweeting</a>. Tweets associated with places are not necessarily issued from that location but could also potentially be <em>about</em> that location. <a href="/web/20131017203203/https://dev.twitter.com/docs/api/1/get/geo/id/%3Aplace_id">Places</a> can be <a href="/web/20131017203203/https://dev.twitter.com/docs/api/1/post/geo/place">created</a> and <a href="/web/20131017203203/https://dev.twitter.com/docs/api/1/get/geo/search">searched for</a>. Tweets can also be <a href="/web/20131017203203/https://dev.twitter.com/docs/finding-tweets-about-places">found</a> by place_id. See <a href="/web/20131017203203/https://dev.twitter.com/docs/about-geo-place-attributes">About Geo Place Attributes</a> for more information.</p>
+                  <p><span style="font-size:10px">(<a href="/web/20131017203203/https://api.twitter.com/1/geo/id/247f43d441defc03.json">JSON</a>)</span></p>
+                  <h2>Field Guide</h2>
+                  <p>Consumers of Places should tolerate the addition of new fields and variance in ordering of fields with ease. Not all fields appear in all contexts. It is generally safe to consider a nulled field, an empty set, and the absence of a field as the same thing.</p>
+                  <table class="platform-object">
+                     <col>
+                     <thead>
+                        <tr>
+                           <th>Field</th>
+                           <th>Type</th>
+                           <th>Description</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <th>
+                              attributes
+                           </th>
+                           <td>Object</td>
+                           <td>
+                              Contains a hash of variant information about the place. See <a href="/web/20131017203203/https://dev.twitter.com/docs/about-geo-place-attributes">About Geo Place Attributes</a>.
+                              <p>Example:<br/>
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1"><span class="st0">"attributes"</span><span class="sy0">:</span> <span class="br0">{</span>
+    <span class="st0">"street_address"</span><span class="sy0">:</span> <span class="st0">"795 Folsom St"</span><span class="sy0">,</span>
+    <span class="st0">"623:id"</span><span class="sy0">:</span> <span class="st0">"210176"</span><span class="sy0">,</span>
+    <span class="st0">"twitter"</span><span class="sy0">:</span> <span class="st0">"twitter"</span>
+<span class="br0">}</span><span class="sy0">,</span></pre>
+                                 </div>
+                              </div>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th>
+                              bounding_box
+                           </th>
+                           <td><a href="#obj-boundingbox">Object</a></td>
+                           <td>
+                              A bounding box of coordinates which encloses this place.
+                              <p>Example:<br/> 
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1"><span class="st0">"bounding_box"</span><span class="sy0">:</span><span class="br0">{</span><span class="st0">"coordinates"</span><span class="sy0">:</span><span class="br0">[</span> <span class="br0">[</span> <span class="br0">[</span><span class="nu0">2.2241006</span><span class="sy0">,</span><span class="nu0">48.8155414</span><span class="br0">]</span><span class="sy0">,</span> <span class="br0">[</span><span class="nu0">2.4699099</span><span class="sy0">,</span><span class="nu0">48.8155414</span><span class="br0">]</span><span class="sy0">,</span> <span class="br0">[</span><span class="nu0">2.4699099</span><span class="sy0">,</span><span class="nu0">48.9021461</span><span class="br0">]</span><span class="sy0">,</span> <span class="br0">[</span><span class="nu0">2.2241006</span><span class="sy0">,</span><span class="nu0">48.9021461</span><span class="br0">]</span> <span class="br0">]</span> <span class="br0">]</span><span class="sy0">,</span> <span class="st0">"type"</span><span class="sy0">:</span><span class="st0">"Polygon"</span><span class="br0">}</span></pre>
+                                 </div>
+                              </div>
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th>
+                              country
+                           </th>
+                           <td>String</td>
+                           <td>
+                              Name of the country containing this place.
+                              <p>Example:<br/>
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1"><span class="st0">"country"</span><span class="sy0">:</span><span class="st0">"France"</span></pre>
+                                 </div>
+                              </div>
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th>
+                              country_code
+                           </th>
+                           <td>String</td>
+                           <td>
+                              Shortened country code representing the country containing this place.
+                              <p>Example:<br/>
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1"><span class="st0">"country_code"</span><span class="sy0">:</span><span class="st0">"FR"</span></pre>
+                                 </div>
+                              </div>
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th>
+                              full_name
+                           </th>
+                           <td>String</td>
+                           <td>
+                              Full human-readable representation of the place's name.
+                              <p>Example:<br/>
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1"><span class="st0">"full_name"</span><span class="sy0">:</span><span class="st0">"Paris, Paris"</span></pre>
+                                 </div>
+                              </div>
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th>
+                              id
+                           </th>
+                           <td>String</td>
+                           <td>
+                              ID representing this place.  Note that this is represented as a string, not an integer.
+                              <p>Example:<br/>
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1"><span class="st0">"id"</span><span class="sy0">:</span><span class="st0">"7238f93a3e899af6"</span></pre>
+                                 </div>
+                              </div>
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th>
+                              name
+                           </th>
+                           <td>String</td>
+                           <td>
+                              Short human-readable representation of the place's name.
+                              <p>Example:<br/>
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1"><span class="st0">"name"</span><span class="sy0">:</span><span class="st0">"Paris"</span></pre>
+                                 </div>
+                              </div>
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th>
+                              place_type
+                           </th>
+                           <td>String</td>
+                           <td>
+                              The type of location represented by this place.
+                              <p>Example:<br/> 
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1"><span class="st0">"place_type"</span><span class="sy0">:</span><span class="st0">"city"</span></pre>
+                                 </div>
+                              </div>
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th>
+                              url
+                           </th>
+                           <td>String</td>
+                           <td>
+                              URL representing the location of additional place metadata for this place.
+                              <p>Example:<br/> 
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1"><span class="st0">"url"</span><span class="sy0">:</span><span class="st0">"http://api.twitter.com/1/geo/id/7238f93a3e899af6.json"</span></pre>
+                                 </div>
+                              </div>
+                              </p>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  <h3 id="obj-boundingbox">Bounding box</h3>
+                  <table class="platform-object">
+                     <col>
+                     <thead>
+                        <tr>
+                           <th>
+                              Field
+                           </th>
+                           <th>
+                              Type
+                           </th>
+                           <th>
+                              Description
+                           </th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <th>
+                              coordinates
+                           </th>
+                           <td>Array of Array of Array of Float</td>
+                           <td>
+                              A series of longitude and latitude points, defining a box which will contain the Place entity this bounding box is related to. Each point is an array in the form of [longitude, latitude].  Points are grouped into an array per bounding box.  Bounding box arrays are wrapped in one additional array to be compatible with the polygon notation.
+                              <p>Example:<br/> 
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1"><span class="st0">"coordinates"</span><span class="sy0">:</span><span class="br0">[</span> <span class="br0">[</span> <span class="br0">[</span><span class="nu0">2.2241006</span><span class="sy0">,</span><span class="nu0">48.8155414</span><span class="br0">]</span><span class="sy0">,</span> <span class="br0">[</span><span class="nu0">2.4699099</span><span class="sy0">,</span><span class="nu0">48.8155414</span><span class="br0">]</span><span class="sy0">,</span> <span class="br0">[</span><span class="nu0">2.4699099</span><span class="sy0">,</span><span class="nu0">48.9021461</span><span class="br0">]</span><span class="sy0">,</span> <span class="br0">[</span><span class="nu0">2.2241006</span><span class="sy0">,</span><span class="nu0">48.9021461</span><span class="br0">]</span> <span class="br0">]</span> <span class="br0">]</span></pre>
+                                 </div>
+                              </div>
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th>
+                              type
+                           </th>
+                           <td>String</td>
+                           <td>
+                              The type of data encoded in the coordinates property. This will be "Polygon" for bounding boxes.
+                              <p>Example:<br/> 
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1"><span class="st0">"type"</span><span class="sy0">:</span><span class="st0">"Polygon"</span></pre>
+                                 </div>
+                              </div>
+                              </p>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+            </div>
+            <div id="sidebar-last">
+               <div class="block">
+                  <h2>Natural habitat</h2>
+                  <p>Places can be found throughout the natural universe, but typically only appear attached to <a href="/web/20131017203203/https://dev.twitter.com/docs/platform-objects/tweets">Tweets</a> on Twitter.</p>
+                  <p><img src="../images/robin.jpg" width="235" height="277" alt="Place objects" /></p>
+               </div>
+               <div class="block">
+                  <h2>Related API Resources</h2>
+                  <div class="view">
+                     <div class="content">
+                        <div class="item-list">
+                           <ul>
+                              <li class="views-row views-row-1 views-row-odd views-row-first">  <a href="/web/20131017203203/https://dev.twitter.com/docs/api/1/get/geo/id/%3Aplace_id">GET geo/id/:place_id</a></li>
+                              <li class="views-row views-row-2 views-row-even">  <a href="/web/20131017203203/https://dev.twitter.com/docs/api/1/get/geo/reverse_geocode">GET geo/reverse_geocode</a></li>
+                              <li class="views-row views-row-3 views-row-odd">  <a href="/web/20131017203203/https://dev.twitter.com/docs/api/1/get/geo/search">GET geo/search</a></li>
+                              <li class="views-row views-row-4 views-row-even">  <a href="/web/20131017203203/https://dev.twitter.com/docs/api/1/get/geo/similar_places">GET geo/similar_places</a></li>
+                              <li class="views-row views-row-5 views-row-odd">  <a href="/web/20131017203203/https://dev.twitter.com/docs/api/1/post/geo/place">POST geo/place</a></li>
+                              <li class="views-row views-row-6 views-row-even">  <a href="/web/20131017203203/https://dev.twitter.com/docs/api/1.1/get/geo/id/%3Aplace_id">GET geo/id/:place_id</a></li>
+                              <li class="views-row views-row-7 views-row-odd">  <a href="/web/20131017203203/https://dev.twitter.com/docs/api/1.1/get/geo/reverse_geocode">GET geo/reverse_geocode</a></li>
+                              <li class="views-row views-row-8 views-row-even">  <a href="/web/20131017203203/https://dev.twitter.com/docs/api/1.1/get/geo/search">GET geo/search</a></li>
+                              <li class="views-row views-row-9 views-row-odd">  <a href="/web/20131017203203/https://dev.twitter.com/docs/api/1.1/get/geo/similar_places">GET geo/similar_places</a></li>
+                              <li class="views-row views-row-10 views-row-even views-row-last">  <a href="/web/20131017203203/https://dev.twitter.com/docs/api/1.1/post/geo/place">POST geo/place</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="block">
+                  <h2>Tags</h2>
+                  <div class="view">
+                     <div class="content">
+                        <div class="item-list">
+                           <ul>
+                              <li class="views-row views-row-1 views-row-odd views-row-first">  <a href="/web/20131017203203/https://dev.twitter.com/tags/places-geo">Places & Geo</a>  (28)</li>
+                              <li class="views-row views-row-2 views-row-even views-row-last">  <a href="/web/20131017203203/https://dev.twitter.com/tags/geo">Geo</a>  (4)</li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      
+      <div id="footer-outer">
+         <div id="footer">
+            <a href="#" data-show-count="false" class="twitter-follow-button" data-text-color="999999" data-link-color="0080A6" lang="en">Follow @twitterapi</a>
+            <ul class="menu">
+               <li class="leaf first"><a href="#terms/api-terms" title="Developer Rules of the Road">API Terms</a></li>
+               <li class="leaf"><a href="#" title="Twitter API Status">API Status</a></li>
+               <li class="leaf"><a href="#" title="Twitter Developer blog">Blog</a></li>
+               <li class="leaf"><a href="#" title="Twitter Development discussions">Discussions</a></li>
+               <li class="leaf"><a href="#" title="Twitter development documentation">Documentation</a></li>
+            </ul>
+         </div>
+      </div>
+   </div>
+</body>
+</html>

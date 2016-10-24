@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <title>A field guide to Twitter Platform objects | Twitter Developers</title>
+   <link rel="shortcut icon" href="/web/20131017194923im_/https://dev.twitter.com/sites/all/themes/twitter_commons/favicon.ico" type="image/x-icon" />
+   <meta name="keywords" content="field guide" />
+   <meta name="description" content="Like any ecosystem, the Twitter platform has a variety of flora and fauna. Use this field guide to better understand the most frequently observed wild objects." />
+   <link type="text/css" rel="stylesheet" href="../styles.css"/>
+</head>
+
+<body id="page-node" class="not-front not-logged-in node-type-platform-object showing-tabs">
+
+   <div id="page">
+      
+      <a href="#content-main" class="skip">Skip to Main Content Area</a>
+      
+      <div id="header-outer">
+         <div id="header">
+            <a href="#" id="logo" title="Home">
+            <span class="twitter-bird"></span>Developers</a>
+            <ul id="title-nav">
+               <li class="expanded first">
+                  <a href="#" title="">API Health</a>
+                  <ul class="menu">
+                     <li class="leaf first"><a href="#" title="">API Status</a></li>
+                     <li class="leaf last"><a href="#" title="">API Issues</a></li>
+                  </ul>
+               </li>
+               <li class="leaf"><a href="#" title="">Blog</a></li>
+               <li class="leaf"><a href="#" title="">Discussions</a></li>
+               <li class="expanded active-trail">
+                  <a href="#" title="">Documentation</a>
+               </li>
+               <li class="leaf last"><a href="../about/" title="">About This</a></li>
+            </ul>
+         </div>
+      </div>
+       <div id="content-outer">
+         <div id="breadcrumbs">
+            <div class="breadcrumb">
+               <a href="../">Home</a> → <a href="../">Documentation</a> → <a href="#">Platform Objects</a>
+               <div><a href="#" data-count="none" data-related="twitterapi" class="twitter-share-button" lang="en">Tweet</a><span class="addt-info"></span></div>
+            </div>
+         </div>
+         <h1 id="title">Users</h1>
+         <div id="content-inner">
+            <div id="content-main">
+               <div class="doc-version">
+                  <a title='Resources for API v1' class='version-pill version_one' href='/web/20131017203047/https://dev.twitter.com/docs/api/1'>API version 1</a><a title='Resources for API v1.1' class='version-pill version_one_one' href='/web/20131017203047/https://dev.twitter.com/docs/api/1.1'>API version 1.1</a><br/>
+               </div>
+               <div class="doc-updated">
+                  Updated on Mon, 2013-05-20 08:28  
+               </div>
+               <div>
+                  <p>Users can be anyone or anything. They <a href="/web/20131017203047/https://dev.twitter.com/docs/api/1.1/post/statuses/update">tweet</a>, <a href="/web/20131017203047/https://dev.twitter.com/docs/api/1.1/post/friendships/create">follow</a>, <a href="/web/20131017203047/https://dev.twitter.com/docs/api/1.1/post/lists/create">create lists</a>, have a <a href="/web/20131017203047/https://dev.twitter.com/docs/api/1.1/get/statuses/home_timeline">home_timeline</a>, can be <a href="/web/20131017203047/https://dev.twitter.com/docs/api/1.1/get/statuses/mentions_timeline">mentioned</a>, and can be <a href="/web/20131017203047/https://dev.twitter.com/docs/api/1.1/get/users/lookup">looked up</a> in bulk.</p>
+                  <div>
+                     <a href="/web/20131017203047/https://twitter.com/intent/user?screen_name=twitterapi"><img src="../images/twitterapi-user.png" width="617" height="187" alt="@twitterapi" title="@twitterapi" /></a>
+                     <p><span style="font-size:10px">(<a href="/web/20131017203047/https://api.twitter.com/1/users/show.json?screen_name=twitterapi&include_entities=true">JSON</a>)</span></p>
+                  </div>
+                  <h3>Field Guide</h3>
+                  <p>Consumers of Users should tolerate the addition of new fields and variance in ordering of fields with ease. Not all fields appear in all contexts. It is generally safe to consider a nulled field, an empty set, and the absence of a field as the same thing.</p>
+                  <table class="platform-object">
+                     <thead>
+                        <tr>
+                           <th>Field</th>
+                           <th>Type</th>
+                           <th>Description</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <th>
+                              contributors_enabled
+                           </th>
+                           <td>Boolean</td>
+                           <td>
+                              Indicates that the user has an account with "contributor mode" enabled, allowing for Tweets issued by the user to be co-authored by another account. Rarely <tt>true</tt>.
+                              <p>Example:<br/>
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1"><span class="st0">"contributors_enabled"</span><span class="sy0">:</span> <span class="kw2">false</span></pre>
+                                 </div>
+                              </div>
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th>
+                              created_at
+                           </th>
+                           <td>String</td>
+                           <td>
+                              The UTC datetime that the user account was created on Twitter.
+                              <p>Example:<br/>
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1"><span class="st0">"created_at"</span><span class="sy0">:</span> <span class="st0">"Mon Nov 29 21:18:15 +0000 2010"</span></pre>
+                                 </div>
+                              </div>
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th>
+                              default_profile
+                           </th>
+                           <td>Boolean</td>
+                           <td>
+                              When true, indicates that the user has not altered the theme or background of their user profile.
+                              <p>Example:<br/>
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1"><span class="st0">"default_profile"</span><span class="sy0">:</span> <span class="kw2">false</span></pre>
+                                 </div>
+                              </div>
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th>
+                              default_profile_image
+                           </th>
+                           <td>Boolean</td>
+                           <td>
+                              When true, indicates that the user has not uploaded their own avatar and a default egg avatar is used instead.
+                              <p>Example:<br/>
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1"><span class="st0">"default_profile_image"</span><span class="sy0">:</span> <span class="kw2">false</span></pre>
+                                 </div>
+                              </div>
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th>
+                              description
+                           </th>
+                           <td>String</td>
+                           <td>
+                              <em>Nullable</em>. The user-defined UTF-8 string describing their account.
+                              <p>Example:<br/>
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1"><span class="st0">"description"</span><span class="sy0">:</span><span class="st0">"The Real Twitter API."</span></pre>
+                                 </div>
+                              </div>
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th>entities</th>
+                           <td><a href="/web/20131017203047/https://dev.twitter.com/docs/platform-objects/entities#user_entities">Entities</a></td>
+                           <td>
+                              Entities which have been parsed out of the <tt>url</tt> or <tt>description</tt> fields defined by the user. Read more about <a href="/web/20131017203047/https://dev.twitter.com/docs/platform-objects/entities#user_entities">User Entities</a>.
+                              <p>Example:<br/>
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1"><span class="st0">"entities"</span><span class="sy0">:</span> <span class="br0">{</span>
+  <span class="st0">"url"</span><span class="sy0">:</span> <span class="br0">{</span>
+    <span class="st0">"urls"</span><span class="sy0">:</span> <span class="br0">[</span>
+      <span class="br0">{</span>
+        <span class="st0">"url"</span><span class="sy0">:</span> <span class="st0">"http:<span class="es0">\/</span><span class="es0">\/</span>dev.twitter.com"</span><span class="sy0">,</span>
+        <span class="st0">"expanded_url"</span><span class="sy0">:</span> <span class="kw2">null</span><span class="sy0">,</span>
+        <span class="st0">"indices"</span><span class="sy0">:</span> <span class="br0">[</span><span class="nu0">0</span><span class="sy0">,</span> <span class="nu0">22</span><span class="br0">]</span>
+      <span class="br0">}</span>
+    <span class="br0">]</span>
+  <span class="br0">}</span><span class="sy0">,</span>
+  <span class="st0">"description"</span><span class="sy0">:</span> <span class="br0">{</span><span class="st0">"urls"</span><span class="sy0">:</span><span class="br0">[</span><span class="br0">]</span> <span class="br0">}</span>
+<span class="br0">}</span></pre>
+                                 </div>
+                              </div>
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th>
+                              favourites_count
+                           </th>
+                           <td>Int</td>
+                           <td>
+                              The number of tweets this user has favorited in the account's lifetime. British spelling used in the field name for historical reasons.
+                              <p>Example:<br/>
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1"><span class="st0">"favourites_count"</span><span class="sy0">:</span> <span class="nu0">13</span></pre>
+                                 </div>
+                              </div>
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th>
+                              follow_request_sent
+                           </th>
+                           <td>Type</td>
+                           <td>
+                              <em>Nullable</em>. <em>Perspectival</em>. When true, indicates that the authenticating user has issued a follow request to this protected user account.
+                              <p>Example:<br/>
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1"><span class="st0">"follow_request_sent"</span><span class="sy0">:</span><span class="kw2">false</span></pre>
+                                 </div>
+                              </div>
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th>
+                              following
+                           </th>
+                           <td>Type</td>
+                           <td>
+                              <em>Nullable</em>. <em>Perspectival</em>. <i>Deprecated.</i> When true, indicates that the authenticating user is following this user. Some false negatives are possible when set to "false," but these false negatives are increasingly being represented as "null" instead. See <a href="/web/20131017203047/http://groups.google.com/group/twitter-development-talk/browse_thread/thread/42ba883b9f8e3c6e?tvc=2">Discussion</a>.
+                              <p>Example:<br/>
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1"><span class="st0">"following"</span><span class="sy0">:</span><span class="kw2">true</span></pre>
+                                 </div>
+                              </div>
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th>
+                              followers_count
+                           </th>
+                           <td>Int</td>
+                           <td>
+                              The number of followers this account currently has. Under certain conditions of duress, this field will temporarily indicate "0."
+                              <p>Example:<br/>
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1"><span class="st0">"followers_count"</span><span class="sy0">:</span> <span class="nu0">21</span></pre>
+                                 </div>
+                              </div>
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th>
+                              friends_count
+                           </th>
+                           <td>Int</td>
+                           <td>
+                              The number of users this account is following (AKA their "followings"). Under certain conditions of duress, this field will temporarily indicate "0."
+                              <p>Example:<br/>
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1"><span class="st0">"friends_count"</span><span class="sy0">:</span> <span class="nu0">32</span></pre>
+                                 </div>
+                              </div>
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th>
+                              geo_enabled
+                           </th>
+                           <td>Boolean</td>
+                           <td>
+                              When true, indicates that the user has enabled the possibility of geotagging their Tweets. This field must be true for the current user to attach geographic data when using <a href="/web/20131017203047/https://dev.twitter.com/docs/api/1/post/statuses/update">POST statuses/update</a>.
+                              <p>Example:<br/>
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1"><span class="st0">"geo_enabled"</span><span class="sy0">:</span> <span class="kw2">true</span></pre>
+                                 </div>
+                              </div>
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th>
+                              id
+                           </th>
+                           <td>Int64</td>
+                           <td>
+                              The integer representation of the unique identifier for this User. This number is greater than 53 bits and some programming languages may have difficulty/silent defects in interpreting it. Using a signed 64 bit integer for storing this identifier is safe. Use
+                              <tt>id_str</tt> for fetching the identifier to stay on the safe side. See <a href="/web/20131017203047/https://dev.twitter.com/docs/twitter-ids-json-and-snowflake">Twitter IDs, JSON and Snowflake</a>.
+                              <p>Example:<br/>
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1"><span class="st0">"id"</span><span class="sy0">:</span><span class="nu0">6253282</span></pre>
+                                 </div>
+                              </div>
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th>
+                              id_str
+                           </th>
+                           <td>String</td>
+                           <td>
+                              The string representation of the unique identifier for this User. Implementations should use this rather than the large, possibly un-consumable integer in <tt>id</tt>.
+                              <p>Example:<br/>
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1"><span class="st0">"id_str"</span><span class="sy0">:</span><span class="st0">"6253282"</span></pre>
+                                 </div>
+                              </div>
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th>
+                              is_translator
+                           </th>
+                           <td>Boolean</td>
+                           <td>
+                              When true, indicates that the user is a participant in Twitter's <a href="/web/20131017203047/http://translate.twttr.com/">translator community</a>.
+                              <p>Example:<br/>
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1"><span class="st0">"is_translator"</span><span class="sy0">:</span> <span class="kw2">false</span></pre>
+                                 </div>
+                              </div>
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th>
+                              lang
+                           </th>
+                           <td>String</td>
+                           <td>
+                              The <a href="/web/20131017203047/http://tools.ietf.org/html/bcp47">BCP 47</a> code for the user's self-declared user interface language. May or may not have anything to do with the content of their Tweets. 
+                              <p>Examples:<br/>
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1"><span class="st0">"lang"</span><span class="sy0">:</span> <span class="st0">"en"</span>
+<span class="st0">"lang"</span><span class="sy0">:</span> <span class="st0">"msa"</span>
+<span class="st0">"lang"</span><span class="sy0">:</span> <span class="st0">"zh-cn"</span></pre>
+                                 </div>
+                              </div>
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th>
+                              listed_count
+                           </th>
+                           <td>Int</td>
+                           <td>
+                              The number of public lists that this user is a member of.
+                              <p>Example:<br/>
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1"><span class="st0">"listed_count"</span><span class="sy0">:</span><span class="nu0">9274</span></pre>
+                                 </div>
+                              </div>
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th>
+                              location
+                           </th>
+                           <td>String</td>
+                           <td>
+                              <em>Nullable</em>. The user-defined location for this account's profile. Not necessarily a location nor parseable. This field will occasionally be fuzzily interpreted by the Search service.
+                              <p>Example:<br/>
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1"><span class="st0">"location"</span><span class="sy0">:</span><span class="st0">"San Francisco, CA"</span></pre>
+                                 </div>
+                              </div>
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th>
+                              name
+                           </th>
+                           <td>String</td>
+                           <td>
+                              The name of the user, as they've defined it. Not necessarily a person's name. Typically capped at 20 characters, but subject to change.
+                              <p>Example:<br/>
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1"><span class="st0">"name"</span><span class="sy0">:</span><span class="st0">"Twitter API"</span></pre>
+                                 </div>
+                              </div>
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th>
+                              notifications
+                           </th>
+                           <td>Boolean</td>
+                           <td><em>Nullable</em>. <i>Deprecated.</i> May incorrectly report "false" at times. Indicates whether the authenticated user has chosen to receive this user's tweets by SMS. <a href="/web/20131017203047/http://groups.google.com/group/twitter-development-talk/browse_thread/thread/42ba883b9f8e3c6e?tvc=2">Discussion</a>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th>
+                              profile_background_color
+                           </th>
+                           <td>String</td>
+                           <td>
+                              The hexadecimal color chosen by the user for their background.
+                              <p>Example:<br/>
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1"><span class="st0">"profile_background_color"</span><span class="sy0">:</span><span class="st0">"e8f2f7"</span></pre>
+                                 </div>
+                              </div>
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th>
+                              profile_background<br/>_image_url
+                           </th>
+                           <td>String</td>
+                           <td>
+                              A HTTP-based URL pointing to the background image the user has uploaded for their profile.
+                              <p>Example:<br/>
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1"><span class="st0">"profile_background_image_url"</span><span class="sy0">:</span>
+<span class="st0">"http:<span class="es0">\/</span><span class="es0">\/</span>a2.twimg.com<span class="es0">\/</span>profile_background_images<span class="es0">\</span>
+/229557229<span class="es0">\/</span>twitterapi-bg.png"</span></pre>
+                                 </div>
+                              </div>
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th>
+                              profile_background_<br/>image_url_https
+                           </th>
+                           <td>String</td>
+                           <td>
+                              A HTTPS-based URL pointing to the background image the user has uploaded for their profile.
+                              <p>Example:<br/>
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1"><span class="st0">"profile_background_image_url_https"</span><span class="sy0">:</span>
+<span class="st0">"https:<span class="es0">\/</span><span class="es0">\/</span>si0.twimg.com<span class="es0">\/</span>profile_background_images<span class="es0">\</span>
+/229557229<span class="es0">\/</span>twitterapi-bg.png"</span></pre>
+                                 </div>
+                              </div>
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th>
+                              profile_background_tile
+                           </th>
+                           <td>Boolean</td>
+                           <td>
+                              When true, indicates that the user's <tt>profile_background_image_url</tt> should be tiled when displayed.
+                              <p>Example:<br/>
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1"><span class="st0">"profile_background_tile"</span><span class="sy0">:</span><span class="kw2">false</span></pre>
+                                 </div>
+                              </div>
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th>profile_banner_url</th>
+                           <td>String</td>
+                           <td>
+                              The HTTPS-based URL pointing to the standard web representation of the user's uploaded profile banner. By adding a final path element of the URL, you can obtain different image sizes optimized for specific displays. In the future, an API method will be provided to serve these URLs so that you need not modify the original URL. For size variations, please see <a href="/web/20131017203047/https://dev.twitter.com/docs/user-profile-images-and-banners">User Profile Images and Banners</a>.
+                              <p>Example:<br/>
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1"><span class="st0">"profile_banner_url"</span><span class="sy0">:</span> <span class="st0">"https://si0.twimg.com/profile_banners/819797/1348102824"</span></pre>
+                                 </div>
+                              </div>
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th>
+                              profile_image_url
+                           </th>
+                           <td>String</td>
+                           <td>
+                              A HTTP-based URL pointing to the user's avatar image. See <a href="/web/20131017203047/https://dev.twitter.com/docs/user-profile-images-and-banners">User Profile Images and Banners</a>.
+                              <p>Example:<br/>
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1"><span class="st0">"profile_image_url"</span><span class="sy0">:</span>
+<span class="st0">"http:<span class="es0">\/</span><span class="es0">\/</span>a2.twimg.com<span class="es0">\/</span>profile_images<span class="es0">\/</span>1438634086<span class="es0">\</span>
+/avatar_normal.png"</span></pre>
+                                 </div>
+                              </div>
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th>
+                              profile_image_url_https
+                           </th>
+                           <td>String</td>
+                           <td>
+                              A HTTPS-based URL pointing to the user's avatar image.
+                              <p>Example:<br/>
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1"><span class="st0">"profile_image_url_https"</span><span class="sy0">:</span>
+<span class="st0">"https:<span class="es0">\/</span><span class="es0">\/</span>si0.twimg.com<span class="es0">\/</span>profile_images<span class="es0">\/</span>1438634086<span class="es0">\</span>
+/avatar_normal.png"</span></pre>
+                                 </div>
+                              </div>
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th>
+                              profile_link_color
+                           </th>
+                           <td>String</td>
+                           <td>
+                              The hexadecimal color the user has chosen to display links with in their Twitter UI.
+                              <p>Example:<br/>
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1"><span class="st0">"profile_link_color"</span><span class="sy0">:</span><span class="st0">"0094C2"</span></pre>
+                                 </div>
+                              </div>
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th>
+                              profile_sidebar_border_color
+                           </th>
+                           <td>String</td>
+                           <td>
+                              The hexadecimal color the user has chosen to display sidebar borders with in their Twitter UI.
+                              <p>Example:<br/>
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1"><span class="st0">"profile_sidebar_border_color"</span><span class="sy0">:</span><span class="st0">"0094C2"</span></pre>
+                                 </div>
+                              </div>
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th>
+                              profile_sidebar_fill_color
+                           </th>
+                           <td>String</td>
+                           <td>
+                              The hexadecimal color the user has chosen to display sidebar backgrounds with in their Twitter UI.
+                              <p>Example:<br/>
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1"><span class="st0">"profile_sidebar_fill_color"</span><span class="sy0">:</span><span class="st0">"a9d9f1"</span></pre>
+                                 </div>
+                              </div>
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th>
+                              profile_text_color
+                           </th>
+                           <td>String</td>
+                           <td>
+                              The hexadecimal color the user has chosen to display text with in their Twitter UI.
+                              <p>Example:<br/>
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1"><span class="st0">"profile_text_color"</span><span class="sy0">:</span><span class="st0">"437792"</span></pre>
+                                 </div>
+                              </div>
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th>
+                              profile_use_background_image
+                           </th>
+                           <td>Boolean</td>
+                           <td>
+                              When true, indicates the user wants their uploaded background image to be used.
+                              <p>Example:<br/>
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1"><span class="st0">"profile_use_background_image"</span><span class="sy0">:</span><span class="kw2">true</span></pre>
+                                 </div>
+                              </div>
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th>
+                              protected
+                           </th>
+                           <td>Boolean</td>
+                           <td>
+                              When true, indicates that this user has chosen to protect their Tweets. See <a href="/web/20131017203047/https://support.twitter.com/articles/14016">About Public and Protected Tweets</a>.
+                              <p>Example:<br/>
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1"><span class="st0">"protected"</span><span class="sy0">:</span> <span class="kw2">true</span></pre>
+                                 </div>
+                              </div>
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th>
+                              screen_name
+                           </th>
+                           <td>String</td>
+                           <td>
+                              The screen name, handle, or alias that this user identifies themselves with. screen_names are unique but subject to change. Use <tt>id_str</tt> as a user identifier whenever possible. Typically a maximum of 15 characters long, but some historical accounts may exist with longer names.
+                              <p>Example:<br/>
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1"><span class="st0">"screen_name"</span><span class="sy0">:</span><span class="st0">"twitterapi"</span></pre>
+                                 </div>
+                              </div>
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th>
+                              show_all_inline_media
+                           </th>
+                           <td>Boolean</td>
+                           <td>
+                              Indicates that the user would like to see media inline. Somewhat disused.
+                              <p>Example:<br/>
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1"><span class="st0">"show_all_inline_media"</span><span class="sy0">:</span> <span class="kw2">false</span></pre>
+                                 </div>
+                              </div>
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th>
+                              status
+                           </th>
+                           <td><a href="/web/20131017203047/https://dev.twitter.com/docs/platform-objects/tweets">Tweets</a></td>
+                           <td>
+                              <em>Nullable</em>. If possible, the user's most recent tweet or retweet. In some circumstances, this data cannot be provided and this field will be omitted, null, or empty. Perspectival attributes within tweets embedded within users cannot always be relied upon. See <a href="/web/20131017203047/https://dev.twitter.com/docs/faq/#6981">Why are embedded objects stale or inaccurate?</a>.
+                              <p>Example:</br>
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1"><span class="st0">"status"</span><span class="sy0">:</span> <span class="br0">{</span>
+    <span class="st0">"coordinates"</span><span class="sy0">:</span> <span class="kw2">null</span><span class="sy0">,</span>
+    <span class="st0">"favorited"</span><span class="sy0">:</span> <span class="kw2">false</span><span class="sy0">,</span>
+    <span class="st0">"truncated"</span><span class="sy0">:</span> <span class="kw2">false</span><span class="sy0">,</span>
+    <span class="st0">"created_at"</span><span class="sy0">:</span> <span class="st0">"Tue Apr 17 16:38:18 +0000 2012"</span><span class="sy0">,</span>
+    <span class="st0">"id_str"</span><span class="sy0">:</span> <span class="st0">"192290904646754304"</span><span class="sy0">,</span>
+    <span class="st0">"entities"</span><span class="sy0">:</span> <span class="br0">{</span>
+      <span class="st0">"urls"</span><span class="sy0">:</span> <span class="br0">[</span>
+ 
+      <span class="br0">]</span><span class="sy0">,</span>
+      <span class="st0">"hashtags"</span><span class="sy0">:</span> <span class="br0">[</span>
+ 
+      <span class="br0">]</span><span class="sy0">,</span>
+      <span class="st0">"user_mentions"</span><span class="sy0">:</span> <span class="br0">[</span>
+        <span class="br0">{</span>
+          <span class="st0">"name"</span><span class="sy0">:</span> <span class="st0">"Micah McVicker"</span><span class="sy0">,</span>
+          <span class="st0">"id_str"</span><span class="sy0">:</span> <span class="st0">"166661446"</span><span class="sy0">,</span>
+          <span class="st0">"id"</span><span class="sy0">:</span> <span class="nu0">166661446</span><span class="sy0">,</span>
+          <span class="st0">"indices"</span><span class="sy0">:</span> <span class="br0">[</span>
+            <span class="nu0">0</span><span class="sy0">,</span>
+            <span class="nu0">14</span>
+          <span class="br0">]</span><span class="sy0">,</span>
+          <span class="st0">"screen_name"</span><span class="sy0">:</span> <span class="st0">"MicahMcVicker"</span>
+        <span class="br0">}</span>
+      <span class="br0">]</span>
+    <span class="br0">}</span><span class="sy0">,</span>
+    <span class="st0">"in_reply_to_user_id_str"</span><span class="sy0">:</span> <span class="st0">"166661446"</span><span class="sy0">,</span>
+    <span class="st0">"contributors"</span><span class="sy0">:</span> <span class="kw2">null</span><span class="sy0">,</span>
+    <span class="st0">"text"</span><span class="sy0">:</span> <span class="st0">"@MicahMcVicker make sure you're using include_rts=true and no other filters, then walking your timeline by since_id and max_id"</span><span class="sy0">,</span>
+    <span class="st0">"retweet_count"</span><span class="sy0">:</span> <span class="nu0">0</span><span class="sy0">,</span>
+    <span class="st0">"in_reply_to_status_id_str"</span><span class="sy0">:</span> <span class="st0">"192290470427246594"</span><span class="sy0">,</span>
+    <span class="st0">"id"</span><span class="sy0">:</span> <span class="nu0">192290904646754304</span><span class="sy0">,</span>
+    <span class="st0">"geo"</span><span class="sy0">:</span> <span class="kw2">null</span><span class="sy0">,</span>
+    <span class="st0">"retweeted"</span><span class="sy0">:</span> <span class="kw2">false</span><span class="sy0">,</span>
+    <span class="st0">"in_reply_to_user_id"</span><span class="sy0">:</span> <span class="nu0">166661446</span><span class="sy0">,</span>
+    <span class="st0">"place"</span><span class="sy0">:</span> <span class="kw2">null</span><span class="sy0">,</span>
+    <span class="st0">"in_reply_to_screen_name"</span><span class="sy0">:</span> <span class="st0">"MicahMcVicker"</span><span class="sy0">,</span>
+    <span class="st0">"source"</span><span class="sy0">:</span> <span class="st0">"<a href=<span class="es0">\"</span>http://sites.google.com/site/yorufukurou/<span class="es0">\"</span> rel=<span class="es0">\"</span>nofollow<span class="es0">\"</span>>YoruFukurou</a>"</span><span class="sy0">,</span>
+    <span class="st0">"in_reply_to_status_id"</span><span class="sy0">:</span> <span class="nu0">192290470427246594</span>
+  <span class="br0">}</span><span class="sy0">,</span></pre>
+                                 </div>
+                              </div>
+                              </p>
+                           </td>
+                        <tr>
+                           <th>
+                              statuses_count
+                           </th>
+                           <td>Int</td>
+                           <td>
+                              The number of tweets (including retweets) issued by the user.
+                              <p>Example:<br/>
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1"><span class="st0">"statuses_count"</span><span class="sy0">:</span> <span class="nu0">42</span></pre>
+                                 </div>
+                              </div>
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th>
+                              time_zone
+                           </th>
+                           <td>String</td>
+                           <td>
+                              <em>Nullable</em>. A string describing the Time Zone this user declares themselves within.
+                              <p>Example:<br/>
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1"><span class="st0">"time_zone"</span><span class="sy0">:</span><span class="st0">"Pacific Time (US & Canada)"</span></pre>
+                                 </div>
+                              </div>
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th>
+                              url
+                           </th>
+                           <td>String</td>
+                           <td>
+                              <em>Nullable</em>. A URL provided by the user in association with their profile.
+                              <p>Example:<br/>
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1"><span class="st0">"url"</span><span class="sy0">:</span><span class="st0">"http:<span class="es0">\/</span><span class="es0">\/</span>dev.twitter.com"</span></pre>
+                                 </div>
+                              </div>
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th>
+                              utc_offset
+                           </th>
+                           <td>Int</td>
+                           <td>
+                              <em>Nullable</em>. The offset from GMT/UTC in seconds.
+                              <p>Example:<br/>
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1"><span class="st0">"utc_offset"</span><span class="sy0">:</span> <span class="sy0">-</span><span class="nu0">18000</span></pre>
+                                 </div>
+                              </div>
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th>
+                              verified
+                           </th>
+                           <td>Boolean</td>
+                           <td>
+                              When true, indicates that the user has a verified account. See <a href="/web/20131017203047/https://support.twitter.com/articles/119135">Verified Accounts</a>.
+                              <p>Example:<br/>
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1"><span class="st0">"verified"</span><span class="sy0">:</span> <span class="kw2">false</span></pre>
+                                 </div>
+                              </div>
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th>withheld_in_countries</th>
+                           <td>String</td>
+                           <td>
+                              When present, indicates a textual representation of the two-letter country codes this user is withheld from. See <a href="/web/20131017203047/https://dev.twitter.com/blog/new-withheld-content-fields-api-responses">New Withheld Content Fields in API Responses</a>.
+                              <p>
+                                 Example:<br/>
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1"><span class="st0">"withheld_in_countries"</span><span class="sy0">:</span> <span class="st0">"GR, HK, MY"</span></pre>
+                                 </div>
+                              </div>
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th>withheld_scope</th>
+                           <td>String</td>
+                           <td>
+                              When present, indicates whether the content being withheld is the "status" or a "user." See <a href="/web/20131017203047/https://dev.twitter.com/blog/new-withheld-content-fields-api-responses">New Withheld Content Fields in API Responses</a>.
+                              <p>
+                                 Example:<br/>
+                              <div class="geshifilter">
+                                 <div class="javascript geshifilter-javascript">
+                                    <pre class="de1"><span class="st0">"withheld_scope"</span><span class="sy0">:</span> <span class="st0">"user"</span></pre>
+                                 </div>
+                              </div>
+                              </p>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+            </div>
+            <div id="sidebar-last">
+               <div class="block">
+                  <h2>Natural habitat</h2>
+                  <p>Users can be found tweeting, following, and favoriting on Twitter.</p>
+                  <p><img src="../images/missouri_meadow_lark.jpg" width="235" height="277" alt="" title="" /></p>
+               </div>
+               <div class="block">
+                  <h2>Related API Resources</h2>
+                  <div class="view">
+                     <div class="content">
+                        <div class="item-list">
+                           <ul>
+                              <li class="views-row views-row-1 views-row-odd views-row-first">  <a href="/web/20131017203047/https://dev.twitter.com/docs/api/1/get/account/verify_credentials">GET account/verify_credentials</a></li>
+                              <li class="views-row views-rowx-2 views-row-even">  <a href="/web/20131017203047/https://dev.twitter.com/docs/api/1/get/blocks/blocking">GET blocks/blocking</a></li>
+                              <li class="views-row views-row-3 views-row-odd">  <a href="/web/20131017203047/https://dev.twitter.com/docs/api/1/get/blocks/exists">GET blocks/exists</a></li>
+                              <li class="views-row views-row-4 views-row-even">  <a href="/web/20131017203047/https://dev.twitter.com/docs/api/1/get/statuses/%3Aid/retweeted_by">GET statuses/:id/retweeted_by</a></li>
+                              <li class="views-row views-row-5 views-row-odd">  <a href="/web/20131017203047/https://dev.twitter.com/docs/api/1/get/users/lookup">GET users/lookup</a></li>
+                              <li class="views-row views-row-6 views-row-even">  <a href="/web/20131017203047/https://dev.twitter.com/docs/api/1/get/users/search">GET users/search</a></li>
+                              <li class="views-row views-row-7 views-row-odd">  <a href="/web/20131017203047/https://dev.twitter.com/docs/api/1/get/users/show">GET users/show</a></li>
+                              <li class="views-row views-row-8 views-row-even">  <a href="/web/20131017203047/https://dev.twitter.com/docs/api/1/post/blocks/create">POST blocks/create</a></li>
+                              <li class="views-row views-row-9 views-row-odd">  <a href="/web/20131017203047/https://dev.twitter.com/docs/api/1/post/blocks/destroy">POST blocks/destroy</a></li>
+                              <li class="views-row views-row-10 views-row-even views-row-last">  <a href="/web/20131017203047/https://dev.twitter.com/docs/api/1/post/friendships/create">POST friendships/create</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="block">
+                  <h2>Tags</h2>
+                  <div class="view">
+                     <div class="content">
+                        <div class="item-list">
+                           <ul>
+                              <li class="views-row views-row-1 views-row-odd views-row-first">  <a href="/web/20131017203047/https://dev.twitter.com/tags/finding-users">finding users</a>  (36)</li>
+                              <li class="views-row views-row-2 views-row-even">  <a href="/web/20131017203047/https://dev.twitter.com/tags/field-descriptions">field descriptions</a>  (9)</li>
+                              <li class="views-row views-row-3 views-row-odd views-row-last">  <a href="/web/20131017203047/https://dev.twitter.com/tags/users">Users</a>  (11)</li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      
+      <div id="footer-outer">
+         <div id="footer">
+            <a href="#" data-show-count="false" class="twitter-follow-button" data-text-color="999999" data-link-color="0080A6" lang="en">Follow @twitterapi</a>
+            <ul class="menu">
+               <li class="leaf first"><a href="#terms/api-terms" title="Developer Rules of the Road">API Terms</a></li>
+               <li class="leaf"><a href="#" title="Twitter API Status">API Status</a></li>
+               <li class="leaf"><a href="#" title="Twitter Developer blog">Blog</a></li>
+               <li class="leaf"><a href="#" title="Twitter Development discussions">Discussions</a></li>
+               <li class="leaf"><a href="#" title="Twitter development documentation">Documentation</a></li>
+            </ul>
+         </div>
+      </div>
+   </div>
+</body>
+</html>
